@@ -1,0 +1,99 @@
+body {
+  padding: 5px;
+  margin: 0;
+}
+
+#resume-form {
+  padding-bottom: 5px;
+  border: 1px solid black;
+  max-width: 2000px;
+  box-sizing: border-box;
+   /* display: none; */
+}
+
+#resume-template {
+  border: 1px solid red;
+  max-width: fit-content;
+  box-sizing: border-box;
+  display: none;
+}
+
+/* Designed By Avinash */
+
+#myimg {
+
+  margin-top: 5px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: rgba(255, 0, 138, 0.79);
+  filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 1));
+}
+
+.temp1-background {
+  background: linear-gradient(65deg, rgba(6, 245, 44, 0.6), rgba(39, 245, 6, 0.75), rgba(245, 6, 6, 0.55), rgba(6, 231, 245, 0.55));
+}
+
+.card {
+  width: 100%;
+}
+
+.card-header {
+  background: linear-gradient(75deg, rgba(245, 6, 6, 0.67), rgba(235, 6, 245, 0.67));
+}
+
+.btn {
+  background: linear-gradient(75deg, rgba(6, 232, 245, 0.67), rgba(235, 6, 245, 0.67));
+  border-radius: 5px;
+  font-size: 16px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  /* Transition for transform and background-color */
+}
+
+.btn:hover {
+  transform: translate(5px, -5px);
+  /* Move the button 5px to the right and 5px upwards */
+  background: linear-gradient(56deg, rgba(253, 10, 149, 0.7), rgba(253, 10, 215, 0.7), rgba(10, 253, 219, 0.7));
+  /* Change background color on hover */
+}
+
+.links {
+  display: inline-flex;
+ align-content: center;
+  gap: 50px;
+}
+.links img{
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 1));
+}
+
+.links>li {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+li a {
+  text-decoration: none;
+  padding-left: 0;
+  font-style: 10pt;
+}
+
+p{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+@media screen and (max-width: 768x) {
+
+  .card {
+
+    flex-direction: column;
+    width: 100%;
+  }
+
+}
+.links>li img{
+  width:40px;
+  height: 40px;
+  border-radius: 50%;
+}

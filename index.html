@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RESUME BUILDER</title>
+<!-- Designed By - Neeraj Panday -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container" id="resume-form">
+    <h1 class="text-center my-2">RESUME BUILDER</h1>
+    <p class="text-center">DESIGED BY Neeraj Panday</p>
+
+    <div class="row">
+      <div class="col-md-6">
+        <!-- personal data -->
+        <h2 class="mt-5">
+          Personal Details
+        </h2>
+        <div class="form-group mt-3">
+          <label for="namefeild">First Name</label>
+          <input type="text" id="namefeild" class="form-control" placeholder="Enter Your First Name" />
+        </div>
+
+        <div class="form-group mt-2">
+          <label for="professionfeild">Profession Title</label>
+          <input type="text" id="professionfeild" class="form-control" placeholder="Enter Your Profession" />
+        </div>
+
+        <h3 class="mt-5">Contact Details</h3>
+        <div class="form-group mt-3">
+
+          <label for="phone">Your Contact Number</label>
+          <input type="number" id="phone" class="form-control" placeholder="Enter Your Contact Number Here" />
+        </div>
+
+        <div class="form-group mt-2">
+          <label for="mailfeild">Your Contact e-mail</label>
+          <input type="email" id="mailfeild" class="form-control" placeholder="Enter Here" />
+        </div>
+
+        <div class="form-group mt-2">
+          <label for="addressfeild">Your Address</label>
+          <textarea id="addressfeild" class="form-control" placeholder="Enter Full Address" rows="5">
+            </textarea>
+        </div>
+        <div class="form-group mt-3">
+          <label for="imagefeild">Choose Your Photo</label>
+          <input type="file"id="imagefeild" class="form-control">
+        </div>
+        <h3 class="mt-5">Important Links</h3>
+        <div class="form-group mt-3">
+          <label for="linkedfeild0">Facebook</label>
+          <input type="text" id="linkedfeild0" class="form-control" placeholder="Your Facebook Link Here" />
+        </div>
+        <div class="form-group mt-3">
+          <label for="linkedfeild1">Linked-In</label>
+          <input type="text" id="linkedfeild1" class="form-control" placeholder="Your Linkd-In Link Here" />
+        </div>
+        <div class="form-group mt-3">
+          <label for="linkedfeild2">Website</label>
+          <input type="text" id="linkedfeild2" class="form-control" placeholder="Your Website  Link Here" />
+        </div>
+        <div class="form-group mt-3">
+          <label for="linkedfeild3">Instagram</label>
+          <input type="text" id="linkedfeild3" class="form-control" placeholder="Your Website  Link Here" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- profesional data -->
+        <h3 class="mt-5">Professional Details</h3>
+        <!--Objective-->
+        <div class="form-group mt-2" id="objfield">
+          <label for="objectivefeild">Objective</label>
+          <textarea class="form-control" id="objectivefeild" placeholder="Enter here" rows="5">
+            </textarea>
+        </div>
+        <!-- Work Experience-->
+        <div class="form-group mt-2 text-center" id="we">
+          <div class="text-start">
+            <label for="weField1">Work Experience</label>
+            <textarea class="form-control weField" placeholder="Enter here" id="weField1" rows="5">
+            </textarea>
+          </div>
+          <!-- New text area is here-->
+
+          <button id="weAddButton" class="btn btn-small btn-primary mt-2" onclick="addNewWEField()">Add</button>
+        </div>
+        <div class="form-group mt-2 text-center" id="aq">
+          <div class="text-start">
+            <label for="acadmicfield">Acadmic Experience</label>
+            <textarea class="form-control eqField" placeholder="Enter here" rows="5" id="acadmicfield">
+                  </textarea>
+          </div>
+          <!-- New text area is here-->
+
+          <button id="aqAddButton" class="btn btn-small btn-primary mt-2" onclick="addNewAQField()">Add</button>
+        </div>
+        <!--Skills-->
+        <div class="form-group mt-2 text-center" id="sk">
+          <div class="text-start">
+            <label for="skField1">Skills</label>
+            <textarea class="form-control skField" placeholder="Enter here" id="skField1" rows="5">
+            </textarea>
+          </div>
+          <button id="skAddButton" class="btn btn-small btn-primary mt-2" onclick="addNewSKField()">Add</button>
+        </div>
+        <!--Hobbies-->
+        <div class="form-group mt-2 text-center" id="hb">
+          <div class="text-start">
+            <label for="hbField1">Hobbies</label>
+            <textarea class="form-control hbField" placeholder="Enter here" id="hbField1" rows="5">
+            </textarea>
+          </div>
+          <button id="hbAddButton" class="btn btn-small btn-primary mt-2" onclick="addNewHBField()">Add</button>
+        </div>
+        <div class="container text-center mt-3"><button onclick="generate()" class="btn btn-primary  btn-lg" formtarget="_blank">Generat Resume</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!--Resume Template-->
+  <div class="container" id="resume-template">
+    <div class="row">
+      <div class="col-md-5 temp1-background text-center">
+        <!--First Column -->
+        <div class="myimg">
+        <img src="/Assets/default-profile.jpg" alt="Profile Pic" class="img-fluid" id="myimg">
+        </div>
+          <!--Tab to edit-->
+
+        <div class="mt-3">
+          <p id="name">Clients Name</p>
+          <p id="profession">Profession</p>
+          <p id="contact">Contact details</p>
+          <p id="email">Email</p>
+          <p id="address">Address</p>
+        </div>
+        <hr />
+       
+          <ul class="links">
+            <li> <a id="fb" href=""><img src="/Assets/facebook.jpg" alt="Facebook"></a>
+            </li>
+            <li> <a id="linked" href=""><img src="/Assets/linkedin.jpg" alt="LinkedIn"></a></li>
+            <li> <a id="insta" href=""><img src="/Assets/instagram.jpg" alt="Instagram"></a></li>
+            <li> <a id="myweb" href=""><img src="/Assets/myweb.jpg" alt="My Web"></a></li>
+        
+      </div>
+      <div class="col-md-7 py-5">
+        <!--Second Column -->
+        <h1 id="name2" class="text-center" style="font-weight: 980px;">Your Name</h1>
+        <p id="profession2"></p>
+        <!--Objective Card-->
+        <div class="card my-5">
+          <div class="card-header">
+            <h3>
+              Objective
+            </h3>
+          </div>
+          <div class="card-body">
+            <p id="objectiveT">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum expedita dolore unde facere repudiandae eveniet nemo neque placeat esse dolorem aliquid perspiciatis, amet eum aspernatur cum doloribus, earum quam? Necessitatibus cumque nam atque laboriosam, possimus, illo libero! Consequatur quod maiores et quas modi saepe nam fugiat facilis, quis cumque dignissimos.</p>
+          </div>
+        </div>
+        <!--acadmic experience-->
+        <div class="card my-5">
+          <div class="card-header">
+            <h3>
+              Academic Experience
+            </h3>
+          </div>
+          <div class="card-body">
+            <ul style="list-style: square" id="academicT">
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, tenetur.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, tenetur.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, tenetur.</li>
+            </ul>
+          </div>
+        </div>
+        <!--work experience-->
+        <div class="card my-5">
+          <div class="card-header">
+            <h3>
+              Work Experience
+            </h3>
+          </div>
+          <div class="card-body">
+            <ul style="list-style: square" id="work">
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, iusto.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, tenetur.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, tenetur.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card mt-3">
+          <div class="card-header ">
+            <h3>Skills</h3>
+          </div>
+          <ul id="skills" style="list-style: square">
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum dolor.</li>
+            <li>Lorem ipsum dolor.</li>
+          </ul>
+        </div>
+        <div class="card my-5">
+          <div class="card-header">
+            <h3>
+              Hobbies
+            </h3>
+          </div>
+          <div class="card-body">
+            <ul style="list-style: square" id="hobby">
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, iusto.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, tenetur.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, tenetur.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="container text-center">
+          <button class="btn my-3" onclick="printresume()">Print Resume</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
